@@ -329,7 +329,7 @@ public class LinkTool extends VueTool
     		setComboMode(true);
 //    		 Mac overrides CONTROL-MOUSE to look like right-click (context menu popup) so we can't
             // use CTRL wih mouse drag on a mac.
-            setActiveWhileDownKeyCode(KeyEvent.VK_ALT);
+            //setActiveWhileDownKeyCode(KeyEvent.VK_ALT);
     	}
     }
     
