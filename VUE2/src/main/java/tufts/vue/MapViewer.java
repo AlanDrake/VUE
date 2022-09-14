@@ -4371,6 +4371,10 @@ public class MapViewer extends TimedASComponent//javax.swing.JComponent
      */
     
     void activateLabelEdit(LWComponent lwc) {
+        activateLabelEdit(lwc, false);
+    }
+
+    void activateLabelEdit(LWComponent lwc, Boolean selectAll) {
 
         if (activeTextEdit != null && activeTextEdit.getLWC() == lwc)
             return;
@@ -4454,14 +4458,14 @@ public class MapViewer extends TimedASComponent//javax.swing.JComponent
         {
             activeRichTextEdit.setLocation(screenX,screenY);            
             add(activeRichTextEdit);
-            activeRichTextEdit.selectAll();
+            if (selectAll) activeRichTextEdit.selectAll();
             VUE.getFormattingPanel().getTextPropsPane().getFontEditorPanel().updateFormatControlsTB(activeRichTextEdit);
           
         }
         else
         {
-            activeTextEdit.setLocation(screenX, screenY);        
-            activeTextEdit.selectAll();
+            activeTextEdit.setLocation(screenX, screenY);
+            if (selectAll) activeTextEdit.selectAll();
             add(activeTextEdit);
         }
 
